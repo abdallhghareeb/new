@@ -1,40 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'cubit/bloc_observer.dart';
-import 'cubit/cubit.dart';
-import 'home_page/home.dart';
+import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
+import 'package:untitled1/core/constant/constant.dart';
+import 'package:untitled1/core/helper_functions/api.dart';
+import 'package:untitled1/features/cart/presentation/provider/cart_provider.dart';
+import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
+import 'features/banners/presentation/provider/banner_provider.dart';
+import 'features/home/presentation/pages/home_page.dart';
+import 'features/home/presentation/provider/home_provider.dart';
+import 'injection_container.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = MyBlocObserver();
-  runApp(
-      MyApp(startWidget: HomeScreen())
-  );
-
+  await initializeDependencies();
+  await ApiHandle.getInstance.init();
+  runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
-  final Widget? startWidget;
-  const MyApp({super.key, required this.startWidget});
-
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Brightness.dark,
-        ));
-    return BlocProvider(
-      create: (context) => AppCubit()..getBytesFromAsset(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: startWidget
-        // SplashScreen(widget: startWidget!),
-      ),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => CartProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => HomeProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => MarketProvider()..getMarketData(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => BannersProvider()..getBannersData(),
+            ),
+          ],
+          child: MaterialApp(
+              navigatorKey: Constants.navState,
+              debugShowCheckedModeBanner: false,
+              home: HomeScreen()),
+        );
+      },
     );
   }
 }
-

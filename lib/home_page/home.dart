@@ -7,11 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/cubit.dart';
 import '../cubit/states.dart';
 import 'package:card_swiper/card_swiper.dart';
-
 import '../map_page/map.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class AnotherHomeScreen extends StatelessWidget {
+  AnotherHomeScreen({super.key});
 
   final GlobalKey<ScaffoldState> myKey = GlobalKey();
   double? progress;
@@ -480,6 +479,9 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ]),
+                
+                
+                
                 const Align(
                   alignment: Alignment.topRight,
                   child: Padding(

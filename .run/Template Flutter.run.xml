@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="envs">
+      <entry key="DART_ANALYSIS_SERVER_LOG" value="true" />
+    </option>
+    <method v="2" />
+  </configuration>
+</component>
