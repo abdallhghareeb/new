@@ -24,7 +24,6 @@ class MarketItemHome extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: Text("اسم المنتج",style: TextStyleClass.semiBoldStyle(),),
-          leading: Icon(Icons.arrow_back_ios),
           actions: [
             Text("22 k",style: TextStyleClass.smallBoldStyle(color: HexColor("#25A189")),),
             SizedBox(width: 1.w,),
@@ -44,7 +43,9 @@ class MarketItemHome extends StatelessWidget {
                   SizedBox(height: 3.h,),
                   const DetailsOfItemWidget(),
                   SizedBox(height: 3.h,),
-                  ButtonWidget(textOfButton: "أضف إلي السلة", colorOfButton:HexColor("#264653")),
+                  ButtonWidget(buttonFunction: (){
+                    marketProvider.goToOrderDetails();
+                  },textOfButton: "أضف إلي السلة", colorOfButton:HexColor("#264653")),
                 ],
               ),
             ))),);

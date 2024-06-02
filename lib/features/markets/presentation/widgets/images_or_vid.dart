@@ -24,7 +24,7 @@ class ImageOrVidWidget extends StatelessWidget {
       children: [
         Expanded(child: GestureDetector(
           onTap: (){
-            marketProvider.changeBetweenVidAndImg();
+            marketProvider.goToVideos();
           },
           child: Container(
             color: marketProvider.backGround(isVid: true),
@@ -42,18 +42,18 @@ class ImageOrVidWidget extends StatelessWidget {
         )),
         Expanded(child: GestureDetector(
           onTap: (){
-            marketProvider.changeBetweenVidAndImg();
+            marketProvider.goToPhoto();
           },
           child: Container(
-            color: marketProvider.backGround(),
+            color: marketProvider.backGround(isVid: false),
             padding: customWidgetAppPadding,
             child: Row(
 
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("الصور",style:TextStyleClass.textButtonStyle(color: marketProvider.textColor()),),
+                Text("الصور",style:TextStyleClass.textButtonStyle(color: marketProvider.textColor(isVid: false)),),
                 SizedBox(width: 3.w,),
-                SvgWidget(svg: Images.subtractIcon,height: 6.w,width: 6.w,color: marketProvider.iconColor(),),
+                SvgWidget(svg: Images.imageIcon,height: 6.w,width: 6.w,color: marketProvider.iconColor(isVid:false ),),
               ],
             ),
           ),
@@ -61,4 +61,6 @@ class ImageOrVidWidget extends StatelessWidget {
       ],
     );
   }
+
+
 }

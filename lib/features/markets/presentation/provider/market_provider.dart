@@ -6,6 +6,7 @@ import 'package:untitled1/features/markets/domain/use_cases/market_use_case.dart
 import 'package:untitled1/features/markets/presentation/pages/market_item_home.dart';
 import '../../../../core/helper_functions/navigation.dart';
 import '../../../../injection_container.dart';
+import '../../../cart/presentation/pages/order_deatails.dart';
 import '../../domain/entities/market_entity.dart';
 import '../pages/market_home.dart';
 import '../widgets/market_image_List.dart';
@@ -23,6 +24,12 @@ class MarketProvider with ChangeNotifier {
   void goToMarketItemPage() {
     navP(
       MarketItemHome(),
+    );
+  }
+
+  void goToOrderDetails() {
+    navP(
+      OrderDeatailsHome(),
     );
   }
 
@@ -45,22 +52,22 @@ class MarketProvider with ChangeNotifier {
   }
 
   Color textColor({bool? isVid}){
-    if(isVid == isPhoto){
+    if(isVid != isPhoto){
       return Colors.white;
     }
     return HexColor("#264653");
   }
   Color iconColor({bool? isVid}){
-    if(isVid == isPhoto){
+    if(isVid != isPhoto){
       return Colors.white;
     }
     return HexColor("#25A189");
   }
   Color backGround({bool? isVid}){
-    if(isVid == isPhoto){
-      return Colors.white;
+    if(isVid != isPhoto){
+      return HexColor("#264653");
     }
-    return HexColor("#264653");
+    return Colors.white;
   }
 
   Widget photoOrVid(){
@@ -70,16 +77,20 @@ class MarketProvider with ChangeNotifier {
     return MarketImageListWidget();
   }
 
-  void changeBetweenVidAndImg(){
-    isPhoto = !isPhoto;
+  void goToVideos(){
+    isPhoto = false;
+    notifyListeners();
+  }
+  void goToPhoto(){
+    isPhoto = true;
     notifyListeners();
   }
 
-  // int itemSliderIndex=0 ;
-  // void changeIndex(int index){
-  //   this.itemSliderIndex = index;
-  //   notifyListeners();
-  // }
+  int itemSliderIndex=0 ;
+  void changeIndex(int index){
+    itemSliderIndex = index;
+    notifyListeners();
+  }
 
 
 }

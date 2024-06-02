@@ -39,10 +39,9 @@ class MarketHome extends StatelessWidget {
                   TextButton(onPressed: (){
                     Provider.of<MarketProvider>(context,listen: false).goToMarketItemPage();
 
-
                   }, child: Text("صفحة المنتج")),
                   SizedBox(height: 3.h),
-                  const ImageOrVidWidget(),
+                  ImageOrVidWidget(),
                   SizedBox(height: 3.h,),
                   Padding(
                     padding: appPadding,

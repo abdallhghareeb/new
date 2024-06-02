@@ -20,8 +20,12 @@ class Images {
   static const String subtractIcon="assets/images/Subtract.svg";
   static const String vidImage="assets/images/vidImage.jpeg";
   static const String viewsIcon="assets/images/viewsIcon.svg";
+  static const String imageIcon="assets/images/imageIcon.svg";
+  static const String locTextFiled="assets/images/locTextFiled.svg";
 
-  static const String masterCardIcon="assets/images/masterCardIcon.svg";
+  static const String masterCardIcon="assets/images/MasterCardIcon.svg";
   static const String applePayIcon="assets/images/applePayIcon.svg";
   static const String locationIcon="assets/images/locationIcon.svg";
+
+
 }

@@ -13,22 +13,25 @@ class ItemSliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var marketProvider =Provider.of<MarketProvider>(context);
+
     return Container(
       width: 100.w,
-      padding: appPadding,
+
+      margin: EdgeInsets.symmetric(horizontal: 5.w,vertical: 4.w),
       decoration: BoxDecoration(
           color: Colors.transparent, borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
           CarouselSlider(
             options: CarouselOptions(
-                height: 23.h,
+                height: 26.h,
                 autoPlayInterval: const Duration(seconds: 10),
                 viewportFraction: 1,
                 enableInfiniteScroll: true,
                 autoPlay: true,
                 onPageChanged: (i, p) {
-                  // MarketProvider.changeIndex(i);
+                  marketProvider.changeIndex(i);
                 }),
             items: List.generate(5, (i) {
               return InkWell(
@@ -45,7 +48,7 @@ class ItemSliderWidget extends StatelessWidget {
                         children: [
                           Container(
                             width: 100.w,
-                            height: 22.h,
+                            height: 25.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image:  DecorationImage(
@@ -68,7 +71,7 @@ class ItemSliderWidget extends StatelessWidget {
                   5,
                       (i) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 1.w),
-                      child: i == i
+                      child: marketProvider.itemSliderIndex == i
                           ? Container(
                           height: 3.w,
                           width: 3.w,

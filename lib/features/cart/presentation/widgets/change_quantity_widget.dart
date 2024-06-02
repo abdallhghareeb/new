@@ -14,64 +14,62 @@ class ChangeQuantityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.w,
-      padding: appPadding,
-      decoration: BoxDecoration(
-          color: Colors.transparent, borderRadius: BorderRadius.circular(2.w),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 29.w,
-            height: 18.h,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5.w),
-                image: DecorationImage(image: AssetImage(Images.italyImage),fit: BoxFit.cover)
+        width: 100.w,
+        height: 14.h,
+        padding: customWidgetAppPadding,
+        margin: EdgeInsets.symmetric(horizontal:5.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(2.w),
+          boxShadow: [
+            myBoxShadow,
+          ]
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              children: [
+
+                Container(
+                  margin: EdgeInsets.all(1.w),
+                  padding: EdgeInsets.all(0.5.w),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(1.w),
+                    border: Border.all(color: HexColor("#BABABA")),),
+                  child: Icon(Icons.add, color: HexColor("#25A189"),),
+                ),
+                Text("3", style: TextStyleClass.semiStyle(),),
+                Container(
+                  margin: EdgeInsets.all(1.w),
+                  padding: EdgeInsets.all(0.5.w),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(1.w),
+                    border: Border.all(color: HexColor("#BABABA")),),
+                  child: Icon(Icons.remove, color: HexColor("#BABABA"),),
+                ),
+              ],
             ),
+            Row(
 
-
-          ),
-          Column(
-            children: [
-              Text("اسم المنتج",style: TextStyleClass.semiBoldStyle(),),
-              SizedBox(height: 3.h,),
-              Text("22.12رس",style: TextStyleClass.smallStyle(color: HexColor("#25A189")),),
-
-            ],
-          ),
-          Column(
-            children: [
-              Container(
-                margin: EdgeInsets.all(1.w),
-                padding:  EdgeInsets.all(1.w),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(1.w),
-                  border: Border.all(color: HexColor("BABABA")),
+              children: [
+                Column(
+                  children: [
+                    Text("اسم المنتج", style: TextStyleClass.semiBoldStyle(),),
+                    SizedBox(height: 3.h,),
+                    Text("22.12رس", style: TextStyleClass.smallStyle(color: HexColor("#25A189")),),
+                  ],
                 ),
-                child: Icon(
-                  Icons.add,
-                  color: HexColor("#25A189"),
+                SizedBox(width:1.w,),
+                Container(
+                  width: 17.w,
+                  height: 17.w,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(50.w),
+                      image: DecorationImage(image: AssetImage(Images.italyImage), fit: BoxFit.cover)),
                 ),
-              ),
-              Text("3",style: TextStyleClass.semiBoldStyle(),),
-
-              Container(
-                margin: EdgeInsets.all(1.w),
-                padding:  EdgeInsets.all(1.w),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(1.w),
-                    border: Border.all(color: HexColor("BABABA"))
-                ),
-                child: Icon(
-                  Icons.minimize,
-                  size: 10.w,
-                ),
-              ),
-            ],
-          )
-        ],
-      )
-    );
+              ],
+            ),
+          ],
+        ));
   }
 }
