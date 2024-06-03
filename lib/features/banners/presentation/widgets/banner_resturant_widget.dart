@@ -17,7 +17,7 @@ class BannerRestaurantWidget extends StatelessWidget {
       width: 100.w,
       padding: appPadding,
       decoration: BoxDecoration(
-          color: Colors.transparent, borderRadius: BorderRadius.circular(10)),
+          color: Colors.transparent, borderRadius: BorderRadius.circular(2.w)),
       child: Column(
         children: [
           CarouselSlider(

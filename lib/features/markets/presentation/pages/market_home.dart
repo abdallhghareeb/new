@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/features/cart/presentation/pages/order_deatails.dart';
+import 'package:untitled1/features/orders/presentation/pages/order_deatails.dart';
 import 'package:untitled1/features/markets/presentation/pages/market_item_home.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
 import 'package:untitled1/features/markets/presentation/widgets/images_or_vid.dart';

@@ -80,6 +80,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/profile/
   fonts:
     - family: DIN
       fonts:

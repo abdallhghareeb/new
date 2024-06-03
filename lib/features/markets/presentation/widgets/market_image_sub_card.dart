@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
+import '../../../../core/constant/colors.dart';
 import '../../../cart/presentation/provider/cart_provider.dart';
 import '../../domain/entities/market_entity.dart';
 
@@ -84,14 +85,14 @@ class MarketImageWidget extends StatelessWidget {
                         "    ر.س",
                         textAlign: TextAlign.right,
                         style: TextStyleClass.smallStyle(
-                          color: HexColor("#25A189"),
+                          color: MyColor.firstColor,
                         ),
                       ),
                       Text(
                         "${marketData.id}",
                         textAlign: TextAlign.right,
                         style: TextStyleClass.smallStyle(
-                          color: HexColor("#25A189"),
+                          color: MyColor.firstColor,
                         ),
                       ),
                     ],
@@ -99,16 +100,6 @@ class MarketImageWidget extends StatelessWidget {
                   SizedBox(
                     height: 2.w,
                   ),
-                  Consumer<CartProvider>(builder: (context, cart, child) {
-                    return GestureDetector(
-                      onTap: (){
-                        cart.add(marketData);
-                        },
-                      child: Text(
-                        "اضف الي السلة",style: TextStyleClass.smallStyle(),
-                      ),
-                    );
-                  },),
                 ],
               ),
             ),

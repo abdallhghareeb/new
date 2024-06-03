@@ -8,6 +8,8 @@ import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/constant/constant.dart';
 import 'package:untitled1/core/constant/images.dart';
 
+import '../../../../core/constant/colors.dart';
+
 class DetailsOfItemWidget extends StatelessWidget {
   const DetailsOfItemWidget({super.key});
 
@@ -24,9 +26,9 @@ class DetailsOfItemWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Padding(padding: EdgeInsets.only(top: 5.w),child: Text("5.5رس",style: TextStyleClass.smallLineThroughDecorationStyle(color: HexColor("#E97053")),)),
+                  Padding(padding: const EdgeInsets.only(top: 20),child: Text("5.5رس",style: TextStyleClass.smallLineThroughDecorationStyle(color: HexColor("#E97053")),)),
 
-                  Text("3.2رس",style: TextStyleClass.semiBoldStyle(color: HexColor("#25A189")),),
+                  Text("3.2رس",style: TextStyleClass.semiBoldStyle(color: MyColor.firstColor),),
 
                 ],),
               Expanded(

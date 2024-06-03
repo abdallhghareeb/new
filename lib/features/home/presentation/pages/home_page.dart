@@ -2,13 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
-import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/core/helper_functions/navigation.dart';
 import 'package:untitled1/features/home/presentation/widgets/app_bar_widget.dart';
 import 'package:untitled1/features/home/presentation/widgets/main_list_categories.dart';
 import '../../../banners/presentation/widgets/banner_resturant_widget.dart';
 import '../../../markets/presentation/widgets/market_image_List.dart';
+import '../widgets/bottom_nav_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -45,6 +44,9 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: 2.h),
                 ],
               ),
-            )));
+            )),
+      bottomNavigationBar: BottomNavWidget(),
+
+    );
   }
 }

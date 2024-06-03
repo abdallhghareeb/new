@@ -7,14 +7,18 @@ class ButtonWidget extends StatelessWidget {
   final Color colorOfButton;
   Color ? textColor;
   VoidCallback  ? buttonFunction;
-  ButtonWidget({required this.textOfButton,required this.colorOfButton,this.textColor,this.buttonFunction});
+  ButtonWidget({required this.textOfButton,
+    required this.colorOfButton,
+    this.textColor,
+    this.buttonFunction});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: buttonFunction,
       child: Container(
+        width: 90.w,
+        height: 5.5.h,
         margin:EdgeInsets.symmetric(horizontal: 6.w,vertical: 3.h),
-        padding: EdgeInsets.symmetric(horizontal: 3.w,vertical: 2.h),
         decoration: BoxDecoration(
           color: colorOfButton,
           borderRadius: BorderRadius.circular(2.w)

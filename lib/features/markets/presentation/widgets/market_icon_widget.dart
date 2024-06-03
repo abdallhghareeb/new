@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:untitled1/core/constant/images.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
 import '../../../../config/text_style.dart';
+import '../../../../core/constant/colors.dart';
 import '../../data/models/remote_markets_model.dart';
 import '../../domain/entities/market_entity.dart';
 
@@ -16,6 +17,7 @@ class MarketIconAndName extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(width: 2.w,),
         Row(
           children: [
             SvgWidget(svg: Images.messageFillIcon,height: 7.w,width: 7.w,),
@@ -45,7 +47,7 @@ class MarketIconAndName extends StatelessWidget {
               ),
             ),
             SizedBox(height: 2.h,),
-            Text(marketData.name,style:TextStyleClass.textButtonStyle(color: HexColor("#25A189")),),
+            Text(marketData.name,style:TextStyleClass.textButtonStyle(color: MyColor.firstColor),),
             SizedBox(height: 0.5.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,6 +64,7 @@ class MarketIconAndName extends StatelessWidget {
             SvgWidget(svg: Images.checkIcon,height: 5.w,width: 5.w,),
             Text("موثق",style:TextStyleClass.smallDecorationStyle(color: Colors.black),),
           ],),
+        SizedBox(width: 2.w,),
       ],
     );
   }

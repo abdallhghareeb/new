@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:untitled1/features/markets/domain/use_cases/market_use_case.dart';
 import 'package:untitled1/features/markets/presentation/pages/market_item_home.dart';
+import '../../../../core/constant/colors.dart';
 import '../../../../core/helper_functions/navigation.dart';
 import '../../../../injection_container.dart';
-import '../../../cart/presentation/pages/order_deatails.dart';
+import '../../../orders/presentation/pages/order_deatails.dart';
 import '../../domain/entities/market_entity.dart';
 import '../pages/market_home.dart';
 import '../widgets/market_image_List.dart';
@@ -61,7 +62,7 @@ class MarketProvider with ChangeNotifier {
     if(isVid != isPhoto){
       return Colors.white;
     }
-    return HexColor("#25A189");
+    return MyColor.firstColor;
   }
   Color backGround({bool? isVid}){
     if(isVid != isPhoto){

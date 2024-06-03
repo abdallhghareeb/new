@@ -5,10 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
-import 'package:untitled1/core/helper_functions/navigation.dart';
 import 'package:untitled1/core/widget/buttonWidget.dart';
-import 'package:untitled1/features/cart/presentation/widgets/change_quantity_widget.dart';
-
+import 'package:untitled1/features/orders/presentation/widgets/change_quantity_widget.dart';
 import '../widgets/loc_price_widget.dart';
 import '../widgets/payment_widget.dart';
 
@@ -60,12 +58,13 @@ class OrderDeatailsHome extends StatelessWidget {
                     SizedBox(
                       height: 3.h,
                     ),
-                    ButtonWidget(
-                        textOfButton: "اكمال الطلب",
-                        colorOfButton: HexColor("#264653")),
+
                   ],
                 ),
-              ))),
+              )),floatingActionButton: ButtonWidget(
+          textOfButton: "اكمال الطلب",
+          colorOfButton: HexColor("#264653")),
+        floatingActionButtonLocation:FloatingActionButtonLocation.centerFloat ,),
     );
   }
 }

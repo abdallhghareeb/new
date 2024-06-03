@@ -1,12 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/constant/constant.dart';
 import 'package:untitled1/core/constant/images.dart';
+
+import '../../../../core/constant/colors.dart';
 
 class ChangeQuantityWidget extends StatelessWidget {
   const ChangeQuantityWidget({super.key});
@@ -36,7 +35,7 @@ class ChangeQuantityWidget extends StatelessWidget {
                   padding: EdgeInsets.all(0.5.w),
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(1.w),
                     border: Border.all(color: HexColor("#BABABA")),),
-                  child: Icon(Icons.add, color: HexColor("#25A189"),),
+                  child: Icon(Icons.add, color: MyColor.firstColor,),
                 ),
                 Text("3", style: TextStyleClass.semiStyle(),),
                 Container(
@@ -55,7 +54,7 @@ class ChangeQuantityWidget extends StatelessWidget {
                   children: [
                     Text("اسم المنتج", style: TextStyleClass.semiBoldStyle(),),
                     SizedBox(height: 3.h,),
-                    Text("22.12رس", style: TextStyleClass.smallStyle(color: HexColor("#25A189")),),
+                    Text("22.12رس", style: TextStyleClass.smallStyle(color: MyColor.firstColor),),
                   ],
                 ),
                 SizedBox(width:1.w,),

@@ -30,29 +30,6 @@ class AppBarRow extends StatelessWidget {
         SizedBox(
           width: 3.w,
         ),
-        Consumer<CartProvider>(builder: (context, cart, child) {
-          return SizedBox(
-            width: 10.w,
-            height: 10.w,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(2.w),
-              child: SizedBox.fromSize(
-                  size: Size.fromRadius(2.w), // Image radius
-                  child:  Stack(
-                    children: [
-                      const Icon(Icons.notifications_outlined),
-                      CircleAvatar(
-                        child: Center(
-                          child: Text("${cart.count}"),
-                        ),
-                      ),
-                    ],
-                  )
-
-              ),
-            ),
-          );
-        },),
         SizedBox(
           width: 3.w,
         ),
