@@ -3,13 +3,14 @@ import 'package:untitled1/core/helper_functions/navigation.dart';
 import 'package:untitled1/features/home/presentation/pages/home_page.dart';
 import 'package:untitled1/features/profile/presentation/pages/wallet_main_page.dart';
 import '../../../../core/constant/images.dart';
+import '../pages/my_locations_page.dart';
 
 class ProfileProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> myProfileIcons = [
     {
       "text": "عناويني",
       "svg": Images.profileLocation,
-      "route": WalletMainPage()
+      "route": MyLocationsPage()
     },
     {
       "text": "مشاركة التطبيق",

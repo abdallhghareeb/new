@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
@@ -39,7 +40,7 @@ class WalletMainPage extends StatelessWidget {
                 SizedBox(height: 3.h,),
                 ButtonWidget(textOfButton: "اضافة رصيد", colorOfButton: HexColor("#264653")),
                 SizedBox(height: 1.h,),
-                Text(textAlign: TextAlign.right," سجل الرصيد",style: TextStyleClass.normalStyle(fontSize: 12.sp,color: HexColor("#BABABA")),),
+                Container(padding: EdgeInsets.symmetric(horizontal: 2.w),alignment: Alignment.topRight,child: Text(" سجل الرصيد",style: TextStyleClass.normalStyle(fontSize: 12.sp,color: HexColor("#BABABA")),)),
                 SizedBox(height: 2.h,),
                 ListOfTransactionWidgets(),
               ],

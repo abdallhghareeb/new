@@ -44,6 +44,9 @@ class Images {
   static const String line_out="assets/images/profile/Line_out.svg";
   static const String wallet_icon="assets/images/profile/wallet_icon.svg";
 
+  static const String editPen="assets/images/profile/editPen.svg";
+  static const String deletePen="assets/images/profile/deletePen.svg";
+
 
 
 

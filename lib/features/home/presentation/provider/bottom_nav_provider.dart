@@ -3,7 +3,6 @@ import 'package:untitled1/core/constant/colors.dart';
 import 'package:untitled1/core/helper_functions/navigation.dart';
 import 'package:untitled1/features/home/presentation/pages/home_page.dart';
 import 'package:untitled1/features/profile/presentation/pages/profile_home.dart';
-
 import '../../../../core/constant/images.dart';
 import '../../../chat/presentation/pages/main_chat_home.dart';
 import '../../../orders/presentation/pages/orders_home.dart';
@@ -34,7 +33,7 @@ class BottomNavProvider extends ChangeNotifier {
   int index = 3;
 
   void changeNavIndex({required int index}) {
-    changeNavWidget(index: index);
+
     this.index = index;
     notifyListeners();
   }
@@ -46,9 +45,7 @@ class BottomNavProvider extends ChangeNotifier {
     return MyColor.bottomNavColor;
   }
 
-  void changeNavWidget({required int index}){
-    if(this.index!=index){
-      navPR(myBottomNavWidgets[index]['page']);
-    }
+  Widget changeNavWidget(){
+    return  myBottomNavWidgets[index]['page'];
   }
 }

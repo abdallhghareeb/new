@@ -41,7 +41,6 @@ class ProfileHomePage extends StatelessWidget {
               ],
             ),
           )),
-      bottomNavigationBar: BottomNavWidget(),
     );
   }
 }

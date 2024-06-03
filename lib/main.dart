@@ -9,7 +9,9 @@ import 'package:untitled1/features/markets/presentation/provider/market_provider
 import 'features/banners/presentation/provider/banner_provider.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/home/presentation/provider/home_provider.dart';
+import 'features/main/presentation/widgets/main_page.dart';
 import 'features/profile/presentation/provider/profile_provider.dart';
+import 'features/profile/presentation/provider/wallet_provider.dart';
 import 'injection_container.dart';
 
 void main() async {
@@ -34,11 +36,12 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => BannersProvider()..getBannersData(),),
             ChangeNotifierProvider(create: (context) => BottomNavProvider(),),
             ChangeNotifierProvider(create: (context) => ProfileProvider(),),
+            ChangeNotifierProvider(create: (context) => WalletProvider(),),
           ],
           child: MaterialApp(
               navigatorKey: Constants.navState,
               debugShowCheckedModeBanner: false,
-              home: HomeScreen()),
+              home: MainScreen()),
         );
       },
     );

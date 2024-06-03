@@ -6,7 +6,7 @@ import 'package:untitled1/core/widget/svg_widget.dart';
 import 'package:untitled1/features/home/presentation/provider/bottom_nav_provider.dart';
 
 class BottomNavWidget extends StatelessWidget {
-  BottomNavWidget({super.key});
+  const BottomNavWidget({super.key});
   @override
   Widget build(BuildContext context) {
     var bottomNavProvider = Provider.of<BottomNavProvider>(context);

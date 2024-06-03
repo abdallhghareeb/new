@@ -14,7 +14,6 @@ class MainChatHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       key: myKey,
-      bottomNavigationBar: BottomNavWidget(),
     );
   }
 }

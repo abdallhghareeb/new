@@ -14,6 +14,7 @@ class CheckBoxWidget extends StatelessWidget {
         onChange(!check);
       },
       child: Container(
+
         decoration: BoxDecoration(
           border: check?null:Border.all(color: Colors.grey,width: 1.2,
               strokeAlign: BorderSide.strokeAlignCenter),
@@ -21,7 +22,7 @@ class CheckBoxWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(2),
         ),
         padding: padding ?? EdgeInsets.all(0.5.w),
-        child: const Icon(Icons.done,color: Colors.white,size: 13,),
+        child:  Icon(Icons.done,color: Colors.white,size: 16.sp,),
       ),
     );
   }
