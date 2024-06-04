@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
@@ -5,6 +6,9 @@ import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/constant/images.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
+import 'package:untitled1/features/home/presentation/provider/bottom_nav_provider.dart';
+import 'package:untitled1/features/home/presentation/provider/home_provider.dart';
+import 'package:untitled1/features/videos/presentation/pages/videos_home_page.dart';
 import '../../../cart/presentation/provider/cart_provider.dart';
 
 class AppBarRow extends StatelessWidget {
@@ -12,12 +16,18 @@ class AppBarRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<BottomNavProvider>(context,listen: false);
     return Row(
       children: [
-        SvgWidget(
-          svg: Images.videoFile,
-          height: 6.w,
-          width: 6.w,
+        GestureDetector(
+          onTap: (){
+            provider.toggleBetweenHomeAndVideos();
+          },
+          child: SvgWidget(
+            svg: Images.videoFile,
+            height: 6.w,
+            width: 6.w,
+          ),
         ),
         SizedBox(
           width: 3.w,

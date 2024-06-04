@@ -13,7 +13,8 @@ class ListOfTransactionWidgets extends StatelessWidget {
     return SizedBox(
       width: 100.w,
       child: Wrap(
-        children: List.generate(walletProvider.myTransactions.length, (index) => TransActionWidgets(myTransaction: walletProvider.myTransactions[index],)),
+        children: List.generate(walletProvider.myTransactions.length, (index) =>
+            TransActionWidgets(myTransaction: walletProvider.myTransactions[index],)),
       ),
     );
   }

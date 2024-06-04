@@ -28,6 +28,10 @@ class Images {
   static const String bottomNavOrders="assets/images/bottomNavOrders.svg";
   static const String bottomNavUser="assets/images/bottomNavUser.svg";
 
+  static const String countryFlag="assets/images/SA.svg";
+  static const String otpHand="assets/images/OTPHand.svg";
+  static const String orderImage="assets/images/orderImage.png";
+
 
   // profile Icons
   static const String profileImage="assets/images/profile/treka.jpg";
@@ -43,10 +47,17 @@ class Images {
   static const String profileShareApp="assets/images/profile/shareApp.svg";
   static const String line_out="assets/images/profile/Line_out.svg";
   static const String wallet_icon="assets/images/profile/wallet_icon.svg";
-
   static const String editPen="assets/images/profile/editPen.svg";
   static const String deletePen="assets/images/profile/deletePen.svg";
 
+  // videos Icons
+  static const String videoComments="assets/images/videos/comments.svg";
+  static const String videoLocation="assets/images/videos/location.svg";
+  static const String videoMenu="assets/images/videos/menu.svg";
+  static const String videoSearch="assets/images/videos/search.svg";
+  static const String videoShare="assets/images/videos/share.svg";
+  static const String videoStar="assets/images/videos/star.svg";
+  static const String videoLike="assets/images/videos/like.svg";
 
 
 

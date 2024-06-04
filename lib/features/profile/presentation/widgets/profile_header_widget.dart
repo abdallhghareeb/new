@@ -8,15 +8,18 @@ import 'package:sizer/sizer.dart';
 import 'package:untitled1/core/constant/colors.dart';
 import 'package:untitled1/core/constant/images.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
+import 'package:untitled1/features/login/presentation/pages/phone_login_page.dart';
 
 import '../../../../config/text_style.dart';
 import '../../../../core/constant/constant.dart';
+import '../provider/profile_provider.dart';
 
 class ProfileHeaderWidget extends StatelessWidget {
   const ProfileHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var profileProvider = Provider.of<ProfileProvider>(context,listen: false);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,20 +41,25 @@ class ProfileHeaderWidget extends StatelessWidget {
               ],),
             ),
             SizedBox(height: 2.h,),
-            Container(
-              width: 20.w,
-              padding:EdgeInsets.all(2.w) ,
-              decoration: BoxDecoration(
-                  color: MyColor.firstColor,
-                  borderRadius: BorderRadius.circular(2.w)
+            InkWell(
+              onTap: (){
+                profileProvider.goToPages(className: PhoneLoginPage());
+              },
+              child: Container(
+                width: 20.w,
+                padding:EdgeInsets.all(2.w) ,
+                decoration: BoxDecoration(
+                    color: MyColor.firstColor,
+                    borderRadius: BorderRadius.circular(2.w)
+                ),
+                child:  Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Text("تعديل",style: TextStyleClass.smallStyle(color: Colors.white),),
+                  SizedBox(width: 2.w,),
+                  SvgWidget(svg: Images.profileEdit,width: 4.w,height: 4.w,),
+                ],),
               ),
-              child:  Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Text("تعديل",style: TextStyleClass.smallStyle(color: Colors.white),),
-                SizedBox(width: 2.w,),
-                SvgWidget(svg: Images.profileEdit,width: 4.w,height: 4.w,),
-              ],),
             ),
           ],
         ),

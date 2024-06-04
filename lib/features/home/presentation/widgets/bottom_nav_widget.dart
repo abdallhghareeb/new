@@ -10,37 +10,46 @@ class BottomNavWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var bottomNavProvider = Provider.of<BottomNavProvider>(context);
-    return Wrap(
-        spacing: 5.w,
-        children: List.generate(
-            bottomNavProvider.myBottomNavWidgets.length,
-            (index) => InkWell(
-              onTap: (){
-                bottomNavProvider.changeNavIndex(index: index);
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.w),
-                child: Column(
-                      children: [
-                        SvgWidget(
-                          svg: bottomNavProvider.myBottomNavWidgets[index]['svg'],
-                          height: 5.w,
-                          width: 5.w,
-                          color: bottomNavProvider.colorOfNavWidget(index: index),
-                        ),
-                        SizedBox(
-                          height: 2.w,
-                        ),
-                        Text(
-                          bottomNavProvider.myBottomNavWidgets[index]['text'],
-                          style: TextStyleClass.smallStyle(
-                              color: bottomNavProvider.colorOfNavWidget(index: index)),
-                        ),
-                      ],
-                    ),
-              ),
-            )
-        )
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 2.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(8.w),
+            topRight: Radius.circular(8.w))
+      ),
+      child: Wrap(
+          spacing: 5.w,
+          children: List.generate(
+              bottomNavProvider.myBottomNavWidgets.length,
+              (index) => InkWell(
+                onTap: (){
+                  bottomNavProvider.changeNavIndex(index: index);
+                },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: Column(
+                        children: [
+                          SvgWidget(
+                            svg: bottomNavProvider.myBottomNavWidgets[index]['svg'],
+                            height: 5.w,
+                            width: 5.w,
+                            color: bottomNavProvider.colorOfNavWidget(index: index),
+                          ),
+                          SizedBox(
+                            height: 2.w,
+                          ),
+                          Text(
+                            bottomNavProvider.myBottomNavWidgets[index]['text'],
+                            style: TextStyleClass.smallStyle(
+                                color: bottomNavProvider.colorOfNavWidget(index: index)),
+                          ),
+                        ],
+                      ),
+                ),
+              )
+          )
+      ),
     );
   }
 }

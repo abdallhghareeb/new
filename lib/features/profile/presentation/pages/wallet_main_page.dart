@@ -46,7 +46,6 @@ class WalletMainPage extends StatelessWidget {
               ],
             ),
           )),
-      bottomNavigationBar: BottomNavWidget(),
     );
   }
 }

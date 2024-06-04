@@ -23,7 +23,8 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       key: myKey,
       body: bottomNavProvider.changeNavWidget(),
-      bottomNavigationBar: BottomNavWidget(),
+      bottomNavigationBar:  BottomNavWidget(),
+      extendBody: true,
 
     );
   }
