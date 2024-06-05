@@ -58,6 +58,9 @@ class Images {
   static const String videoShare="assets/images/videos/share.svg";
   static const String videoStar="assets/images/videos/star.svg";
   static const String videoLike="assets/images/videos/like.svg";
+  static const String heartOutLinedIcon="assets/images/videos/heartOutLinedIcon.svg";
+  static const String emojiStrokeIcon="assets/images/videos/emojiStrokeIcon.svg";
+  static const String adSignStrokeIcon="assets/images/videos/adSignStrokeIcon.svg";
 
 
 

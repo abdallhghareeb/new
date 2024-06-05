@@ -14,6 +14,7 @@ import 'features/main/presentation/widgets/main_page.dart';
 import 'features/profile/presentation/provider/location_provider.dart';
 import 'features/profile/presentation/provider/profile_provider.dart';
 import 'features/profile/presentation/provider/wallet_provider.dart';
+import 'features/videos/presentation/provider/comment_provider.dart';
 import 'features/videos/presentation/provider/videos_provider.dart';
 import 'injection_container.dart';
 
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => LocationProvider(),),
             ChangeNotifierProvider(create: (context) => LoginProvider(),),
             ChangeNotifierProvider(create: (context) => VideosProvider()..initState(),),
+            ChangeNotifierProvider(create: (context) => CommentProvider(),),
           ],
           child: MaterialApp(
               navigatorKey: Constants.navState,
