@@ -40,10 +40,11 @@ class ListCommentWidget extends StatelessWidget {
             height: 0.2.h,
             width: 100.w,
           ),
-          TextFieldWidget(controller: commentProvider.commentController
-            ,color:Colors.transparent,
-            borderColor: Colors.transparent,
+          TextFieldWidget(
+            controller: commentProvider.commentController,
             elevation: 0,
+            borderColor: Colors.transparent,
+
             suffix: Row(
               children: [
                 SizedBox(
@@ -54,10 +55,11 @@ class ListCommentWidget extends StatelessWidget {
                   width: 5.w,
                 ),
                 SvgWidget(svg: Images.emojiStrokeIcon,width: 5.w,height: 5.w,),
-      
+
               ],
             ),
-      
+            contentPadding: EdgeInsets.symmetric(horizontal: 5.w),
+            hintText: "اكتب تعليق",
           ),
         ],
       ),

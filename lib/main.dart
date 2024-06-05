@@ -3,9 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/core/constant/constant.dart';
 import 'package:untitled1/core/helper_functions/api.dart';
+import 'package:untitled1/features/abstract_test/presentation/provider/my_entity_provider.dart';
 import 'package:untitled1/features/cart/presentation/provider/cart_provider.dart';
 import 'package:untitled1/features/home/presentation/provider/bottom_nav_provider.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
+import 'features/abstract_test/presentation/provider/entity_provider.dart';
 import 'features/banners/presentation/provider/banner_provider.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/home/presentation/provider/home_provider.dart';
@@ -45,11 +47,15 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (context) => LoginProvider(),),
             ChangeNotifierProvider(create: (context) => VideosProvider()..initState(),),
             ChangeNotifierProvider(create: (context) => CommentProvider(),),
+            ChangeNotifierProvider(create: (context) => TestProvider(),),
+            ChangeNotifierProvider(create: (context) => EntityProvider(),),
           ],
           child: MaterialApp(
               navigatorKey: Constants.navState,
               debugShowCheckedModeBanner: false,
-              home: MainScreen()),
+              home: MainScreen()
+
+          ),
         );
       },
     );
