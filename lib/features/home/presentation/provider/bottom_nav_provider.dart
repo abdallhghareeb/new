@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/core/constant/colors.dart';
+import 'package:untitled1/core/constants/colors.dart';
 import 'package:untitled1/features/home/presentation/pages/home_page.dart';
 import 'package:untitled1/features/profile/presentation/pages/profile_home.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 import '../../../chat/presentation/pages/main_chat_home.dart';
 import '../../../orders/presentation/pages/orders_home.dart';
 import '../../../videos/presentation/pages/videos_home_page.dart';
@@ -10,9 +10,15 @@ import '../../../videos/presentation/pages/videos_home_page.dart';
 class BottomNavProvider extends ChangeNotifier {
   final List<Map<String, dynamic>> myBottomNavWidgets = [
     {
-      "text": "حسابي",
-      "svg": Images.bottomNavUser,
-      "page": ProfileHomePage(),
+      "text": "الرئيسية",
+      "svg": Images.bottomNavHome,
+      "page": VideosHomePage(),
+    },
+
+    {
+      "text": "الدردشة",
+      "svg": Images.bottomNavMessage,
+      "page": MainChatHome(),
     },
     {
       "text": "طلباتي",
@@ -20,17 +26,12 @@ class BottomNavProvider extends ChangeNotifier {
       "page": OrderHomePage(),
     },
     {
-      "text": "الدردشة",
-      "svg": Images.bottomNavMessage,
-      "page": MainChatHome(),
-    },
-    {
-      "text": "الرئيسية",
-      "svg": Images.bottomNavHome,
-      "page": VideosHomePage(),
+      "text": "حسابي",
+      "svg": Images.bottomNavUser,
+      "page": ProfileHomePage(),
     },
   ];
-  int index = 3;
+  int index = 0;
 
   void changeNavIndex({required int index}) {
     this.index = index;
@@ -53,9 +54,9 @@ class BottomNavProvider extends ChangeNotifier {
   void toggleBetweenHomeAndVideos() {
     isVideosPage = !isVideosPage;
     if (isVideosPage) {
-      myBottomNavWidgets[3]['page'] = VideosHomePage();
+      myBottomNavWidgets[0]['page'] = const VideosHomePage();
     }else{
-      myBottomNavWidgets[3]['page'] = HomeScreen();
+      myBottomNavWidgets[0]['page'] = HomeScreen();
     }
     notifyListeners();
   }

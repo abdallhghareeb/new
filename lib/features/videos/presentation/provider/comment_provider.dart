@@ -1,5 +1,3 @@
-import 'package:floating_dialog/floating_dialog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import '../widgets/list_comment_widget.dart';

@@ -25,7 +25,7 @@ class OrderDeatailsHome extends StatelessWidget {
             centerTitle: true,
             title: Text(
               "تفاصيل الطلب",
-              style: TextStyleClass.semiBoldStyle(),
+              style: TextStyleClass.normalBoldStyle(),
             ),
           ),
           body: SizedBox(

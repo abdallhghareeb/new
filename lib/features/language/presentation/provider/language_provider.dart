@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
-import '../../../../core/constant/constant.dart';
-import '../../../../core/helper_functions/api.dart';
-import '../../../../core/helper_functions/navigation.dart';
+
+import '../../../../config/app_color.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/helper_function/navigation.dart';
+import '../../../../core/helper_function/prefs.dart';
+import '../../../../core/widget/button_widget.dart';
 import '../../domain/use_cases/translate_text.dart';
 
 class LanguageProvider extends ChangeNotifier {
@@ -16,12 +19,12 @@ class LanguageProvider extends ChangeNotifier {
     Locale("en", ""),
   ];
   Locale get appLocal => _appLocale;
-  // static bool languageIsAr =
-  //     sharedPreferences.getString("language_code") == "ar";
+  static bool languageIsAr =
+      sharedPreferences.getString("language_code") == "ar";
 
-  // static bool getLanguage() {
-  //   return sharedPreferences.getString("language_code") == "ar";
-  // }
+  static bool getLanguage() {
+    return sharedPreferences.getString("language_code") == "ar";
+  }
 
   Future<String?> checkLanguageCode() async {
     var prefs = await SharedPreferences.getInstance();
@@ -40,16 +43,15 @@ class LanguageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future changeLanguage() async {
-    var prefs = await SharedPreferences.getInstance();
-    _appLocale = language;
-    await prefs.setString('language_code', language.languageCode);
-    notifyListeners();
-    // AuthProvider auth = Provider.of(Constants.globalContext(), listen: false);
-    // ApiHandle.getInstance.updateHeader(auth.userEntity!.token ?? "123",
-    //     language: language.languageCode);
-    afterChangeLanguage();
-  }
+  // Future changeLanguage() async {
+  //   var prefs = await SharedPreferences.getInstance();
+  //   _appLocale = language;
+  //   await prefs.setString('language_code', language.languageCode);
+  //   notifyListeners();
+  //   AuthProvider auth = Provider.of(Constants.globalContext(),listen: false);
+  //   ApiHandel.getInstance.updateHeader(auth.userEntity!.token??"123",language: language.languageCode);
+  //   afterChangeLanguage();
+  // }
 
   void setLanguage(Locale locale, {bool rebuild = true}) {
     language = locale;
@@ -77,7 +79,6 @@ class LanguageProvider extends ChangeNotifier {
   Future afterChangeLanguage() async {
     // navPARU(const SplashPage());
   }
-
   void showLangDialog() {
     var language =
         Provider.of<LanguageProvider>(Constants.globalContext(), listen: false);
@@ -135,7 +136,7 @@ class LanguageProvider extends ChangeNotifier {
                                 style: TextStyle(fontSize: 12.sp, height: 1),
                               ),
                               contentPadding: EdgeInsets.zero,
-                              activeColor: Colors.black),
+                              activeColor: AppColor.defaultColor),
                           RadioListTile<String>(
                               value: 'en',
                               groupValue: oldLang,
@@ -149,19 +150,19 @@ class LanguageProvider extends ChangeNotifier {
                                 style: TextStyle(fontSize: 12.sp),
                               ),
                               contentPadding: EdgeInsets.zero,
-                              activeColor: Colors.black),
+                              activeColor: AppColor.defaultColor),
                           SizedBox(
                             height: 1.h,
                           ),
-                          // ButtonWidget(
-                          //     onTap: () {
-                          //       language.setLanguage(
-                          //         Locale(oldLang),
-                          //         rebuild: true,
-                          //       );
-                          //       language.changeLanguage();
-                          //     },
-                          //     text: "save"),
+                          ButtonWidget(
+                              onTap: () {
+                                language.setLanguage(
+                                  Locale(oldLang),
+                                  rebuild: true,
+                                );
+                                // language.changeLanguage();
+                              },
+                              text: "save"),
                         ],
                       );
                     },

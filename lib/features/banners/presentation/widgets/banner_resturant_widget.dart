@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
-import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/core/constant/images.dart';
 import 'package:untitled1/features/banners/presentation/provider/banner_provider.dart';
+import '../../../../core/constants/constants.dart';
 
 class BannerRestaurantWidget extends StatelessWidget {
   const BannerRestaurantWidget({super.key});

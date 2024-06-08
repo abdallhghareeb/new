@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
-import 'package:untitled1/core/constant/colors.dart';
+import 'package:untitled1/core/constants/colors.dart';
 import 'dart:math' as math;
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 import '../../../../core/widget/svg_widget.dart';
 
 class WalletProvider extends ChangeNotifier {

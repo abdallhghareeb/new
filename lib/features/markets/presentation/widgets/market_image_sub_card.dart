@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
-import '../../../../core/constant/colors.dart';
+import '../../../../core/constants/colors.dart';
 import '../../../cart/presentation/provider/cart_provider.dart';
 import '../../domain/entities/market_entity.dart';
 
@@ -32,6 +32,7 @@ class MarketImageWidget extends StatelessWidget {
               ),
             ]),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: 100.w,
@@ -53,12 +54,12 @@ class MarketImageWidget extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 1.h,vertical: 1.h),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${marketData.name}",
+                    marketData.name,
                     textAlign: TextAlign.right,
-                    style: TextStyleClass.normalStyle(fontSize: 8.sp),
+                    style: TextStyleClass.normalStyle(fontSize: 9.sp),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
@@ -78,24 +79,12 @@ class MarketImageWidget extends StatelessWidget {
                   SizedBox(
                     height: 2.w,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "    ر.س",
-                        textAlign: TextAlign.right,
-                        style: TextStyleClass.smallStyle(
-                          color: MyColor.firstColor,
-                        ),
-                      ),
-                      Text(
-                        "${marketData.id}",
-                        textAlign: TextAlign.right,
-                        style: TextStyleClass.smallStyle(
-                          color: MyColor.firstColor,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    "${marketData.id}  ر.س",
+                    textAlign: TextAlign.right,
+                    style: TextStyleClass.smallStyle(
+                      color: MyColor.firstColor,
+                    ),
                   ),
                   SizedBox(
                     height: 2.w,

@@ -3,14 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
-import 'package:untitled1/features/home/presentation/pages/home_page.dart';
 import 'package:untitled1/features/home/presentation/provider/bottom_nav_provider.dart';
-import 'package:untitled1/features/home/presentation/widgets/bottom_nav_widget.dart';
-import '../../../../core/constant/images.dart';
-import '../provider/videos_provider.dart';
+import '../../../../core/constants/images.dart';
 import '../widgets/list_videos_widget.dart';
 import '../widgets/user_button_actions.dart';
-import '../widgets/video_widget.dart';
 
 class VideosHomePage extends StatelessWidget {
   const VideosHomePage({super.key});
@@ -24,15 +20,11 @@ class VideosHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
+        elevation: 0,
         leading: Padding(
           padding: EdgeInsets.symmetric(horizontal: 3.w),
-          child: GestureDetector(
-            onTap: (){
-              provider.toggleBetweenHomeAndVideos();
-            },
-            child: SvgWidget(
-             svg:  Images.videoMenu, width: 7.w,height: 7.w,
-            ),
+          child: SvgWidget(
+            svg:  Images.videoSearch, width: 7.w,height: 7.w,
           ),
         ),
         title: Text(
@@ -42,8 +34,13 @@ class VideosHomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 3.w),
-            child: SvgWidget(
-              svg:  Images.videoSearch, width: 7.w,height: 7.w,
+            child: GestureDetector(
+              onTap: (){
+                provider.toggleBetweenHomeAndVideos();
+              },
+              child: SvgWidget(
+                svg:  Images.videoMenu, width: 7.w,height: 7.w,
+              ),
             ),
           ),
         ],

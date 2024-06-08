@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 import '../../config/app_color.dart';
 import '../../config/text_style.dart';
 import '../../features/language/presentation/provider/language_provider.dart';
-import '../constant/constant.dart';
+import '../constants/constants.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final bool obscureText,autoFocus,next,otp,readOnly;

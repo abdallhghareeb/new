@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
-import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/core/constant/images.dart';
-
-import '../../../../core/constant/colors.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/constants/images.dart';
 
 class ChangeQuantityWidget extends StatelessWidget {
   const ChangeQuantityWidget({super.key});

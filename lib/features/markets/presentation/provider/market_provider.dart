@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:untitled1/features/markets/domain/use_cases/market_use_case.dart';
 import 'package:untitled1/features/markets/presentation/pages/market_item_home.dart';
-import '../../../../core/constant/colors.dart';
+import '../../../../core/constants/colors.dart';
 import '../../../../core/helper_functions/navigation.dart';
 import '../../../../injection_container.dart';
 import '../../../orders/presentation/pages/order_deatails.dart';

@@ -1,47 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
 import 'package:untitled1/features/videos/presentation/provider/comment_provider.dart';
-
 import '../../../../config/text_style.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 
 class UserButtonActionsWidget extends StatelessWidget {
   const UserButtonActionsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var commentProvider = Provider.of<CommentProvider>(context);
+    var commentProvider = Provider.of<CommentProvider>(context,listen: false);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              "اسم الحساب",
-              style: TextStyleClass.smallBoldStyle(color: Colors.white),
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
-            Text(
-              "العنوان الخاص بالمتجر",
-              style: TextStyleClass.tinyBoldStyle(color: Colors.white),
-            ),
-            SizedBox(
-              height: 1.5.h,
-            ),
-          ],
-        ),
-        SizedBox(
-          width: 2.w,
-        ),
         Column(
           children: [
             SizedBox(
@@ -149,6 +123,27 @@ class UserButtonActionsWidget extends StatelessWidget {
               svg: Images.videoLocation,
               width: 11.w,
               height: 11.w,
+            ),
+          ],
+        ),
+        SizedBox(
+          width: 2.w,
+        ),
+        Column(
+          children: [
+            Text(
+              "اسم الحساب",
+              style: TextStyleClass.smallBoldStyle(color: Colors.white),
+            ),
+            SizedBox(
+              height: 1.5.h,
+            ),
+            Text(
+              "العنوان الخاص بالمتجر",
+              style: TextStyleClass.tinyBoldStyle(color: Colors.white),
+            ),
+            SizedBox(
+              height: 1.5.h,
             ),
           ],
         ),

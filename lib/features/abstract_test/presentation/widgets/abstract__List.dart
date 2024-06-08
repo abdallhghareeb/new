@@ -16,7 +16,7 @@ class TestHomeList extends StatelessWidget {
         alignment: WrapAlignment.spaceBetween,
         children: [
           ...List.generate(superAbstract.superList()?.length ??0, (index) {
-            return  TestWidget(abstractModel: superAbstract.superList()![index],);
+            return  TestWidget(abstractModel: superAbstract.superList()![index]);
           }),
         ]
       ),

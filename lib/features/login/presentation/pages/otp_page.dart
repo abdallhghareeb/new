@@ -7,7 +7,7 @@ import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/widget/buttonWidget.dart';
 import 'package:untitled1/core/widget/otp_widget.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 
 class OtpPage extends StatelessWidget {
   const OtpPage({super.key});
@@ -20,39 +20,60 @@ class OtpPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 10.h,),
+              SizedBox(
+                height: 10.h,
+              ),
               Text(
-                "التحقق من الرقم",style: TextStyleClass.headStyle(color: HexColor("#E97053")),
+                "التحقق من الرقم",
+                style: TextStyleClass.headStyle(color: HexColor("#E97053")),
               ),
-              SizedBox(height: 5.h,),
+              SizedBox(
+                height: 5.h,
+              ),
               const Center(
-                child: SvgWidget(svg:Images.otpHand),
+                child: SvgWidget(svg: Images.otpHand),
               ),
-              SizedBox(height: 7.h,),
-              Align(
-                alignment: Alignment.topRight,
-          
-                child: Text(
-                  "الرقم المرسل",style: TextStyleClass.smallBoldStyle(color: HexColor("#9E9E9E")),
+              SizedBox(
+                height: 7.h,
+              ),
+              Row(children: [
+                Text(
+                  "الرقم المرسل",
+                  style:
+                      TextStyleClass.smallBoldStyle(color: HexColor("#9E9E9E")),
                 ),
+              ]),
+              SizedBox(
+                height: 1.h,
               ),
-              SizedBox(height: 1.h,),
               const OTPWidget(),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "ارسال الرقم مره اخرى",style: TextStyleClass.smallBoldStyle(color: HexColor("#264653")),
+                    "لم استلم الرمز؟",
+                    style: TextStyleClass.smallBoldStyle(
+                        color: HexColor("#9E9E9E")),
                   ),
-                  SizedBox(width: 3.w,),
+                  SizedBox(
+                    width: 3.w,
+                  ),
                   Text(
-                    "لم استلم الرمز؟",style: TextStyleClass.smallBoldStyle(color: HexColor("#9E9E9E")),
+                    "ارسال الرقم مره اخرى",
+                    style: TextStyleClass.smallBoldStyle(
+                        color: HexColor("#264653")),
                   ),
-
                 ],
               ),
-              SizedBox(height: 7.h,),
-              ButtonWidget(textOfButton:"دخول",width: 55.w,height:7.h,style: TextStyleClass.headBoldStyle(color: Colors.white),),
+              SizedBox(
+                height: 7.h,
+              ),
+              ButtonWidget(
+                textOfButton: "دخول",
+                width: 55.w,
+                height: 7.h,
+                style: TextStyleClass.headBoldStyle(color: Colors.white),
+              ),
             ],
           ),
         ),

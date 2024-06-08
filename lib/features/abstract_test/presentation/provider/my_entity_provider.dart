@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled1/core/models/abstract_model.dart';
 import 'package:untitled1/features/abstract_test/domain/entities/my_abstract_entity.dart';
 
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 
 class TestProvider with ChangeNotifier implements SuperAbstract {
   List<MyTestEntity> itemInMarket = [
@@ -32,4 +32,12 @@ class TestProvider with ChangeNotifier implements SuperAbstract {
   List<AbstractClass>? superList() {
     return itemInMarket;
   }
+
+  int index = 0;
+  @override
+  void onTap(int index) {
+    this.index = index;
+    notifyListeners();
+  }
+
 }

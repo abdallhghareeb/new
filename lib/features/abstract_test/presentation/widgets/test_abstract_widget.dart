@@ -1,11 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
-import 'package:untitled1/features/abstract_test/domain/entities/abstract_entity.dart';
-import '../../../../core/constant/colors.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/colors.dart';
 import '../../../../core/models/abstract_model.dart';
 
 
@@ -16,8 +15,6 @@ class TestWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GestureDetector(
-      onTap: () {
-      },
       child: Container(
         width: 46.w,
         decoration: BoxDecoration(

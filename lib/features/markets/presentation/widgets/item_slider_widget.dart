@@ -1,15 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
-import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/core/constant/images.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
-import 'package:untitled1/features/banners/presentation/provider/banner_provider.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
+
+import '../../../../core/constants/images.dart';
 
 class ItemSliderWidget extends StatelessWidget {
   const ItemSliderWidget({super.key});
@@ -38,33 +35,32 @@ class ItemSliderWidget extends StatelessWidget {
             items: List.generate(5, (i) {
               return InkWell(
                 onTap: () {},
-                child: Column(
-                  children: [
-                    SizedBox(height: 1.h),
-                    Container(
-                      width: 100.w,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2.w),
-                          color: Colors.transparent),
-                      child: Stack(
+                child: Container(
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(2.w),
+                      color: Colors.transparent),
+                  child: Row(
+                    children: [
+                      Stack(
                         children: [
                           Container(
-                          width: 100.w,
-                          height: 25.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image:  DecorationImage(
-                              image: AssetImage(Images.italyImage),
-                              fit: BoxFit.cover,
-                            ),),
-                        ),
+                            width: 90.w,
+                            height: 25.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image:  const DecorationImage(
+                                image: AssetImage(Images.italyImage),
+                                fit: BoxFit.cover,
+                              ),),
+                          ),
                           Container(
                             width: 15.w,
                             height: 4.5.h,
                             padding: EdgeInsets.all(1.w),
                             decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.only(topLeft:Radius.circular(2.w))
+                                color: Colors.black,
+                              borderRadius: BorderRadius.circular(2.w)
                             ),
                             child: Row(
                               children: [
@@ -74,11 +70,10 @@ class ItemSliderWidget extends StatelessWidget {
                               ],
                             ),
                           ),
-
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             }),

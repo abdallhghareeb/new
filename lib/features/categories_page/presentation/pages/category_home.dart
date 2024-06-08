@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:untitled1/core/constant/constant.dart';
 import '../../../../config/text_style.dart';
+import '../../../../core/constants/constants.dart';
 import '../../../markets/presentation/widgets/market_image_List.dart';
 import '../widgets/list_category_container.dart';
 

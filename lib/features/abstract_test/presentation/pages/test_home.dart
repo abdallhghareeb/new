@@ -1,10 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:untitled1/core/constant/constant.dart';
-import 'package:untitled1/features/abstract_test/domain/entities/abstract_entity.dart';
 import 'package:untitled1/features/abstract_test/presentation/provider/entity_provider.dart';
 
 import '../widgets/abstract__List.dart';

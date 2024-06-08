@@ -6,8 +6,8 @@ import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/widget/buttonWidget.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
 import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
-import '../../../../core/constant/colors.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/images.dart';
 import '../widgets/details_of_item_widget.dart';
 import '../widgets/item_slider_widget.dart';
 
@@ -26,10 +26,14 @@ class MarketItemHome extends StatelessWidget {
           centerTitle: true,
           title: Text("اسم المنتج",style: TextStyleClass.semiBoldStyle(),),
           actions: [
-            Text("22 k",style: TextStyleClass.smallBoldStyle(color: MyColor.firstColor),),
-            SizedBox(width: 1.w,),
-            SvgWidget(svg: Images.viewsIcon),
-            SizedBox(width: 3.w,),
+         Row(
+           children: [
+             Text("22k",style: TextStyleClass.smallBoldStyle(color: HexColor("##264653")),),
+             SizedBox(width: 1.w,),
+             SvgWidget(svg: Images.viewsIcon),
+             SizedBox(width: 3.w,),
+           ],
+         )
           ],
         ),
         body: SizedBox(

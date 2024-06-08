@@ -5,11 +5,8 @@ import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/features/profile/presentation/widgets/balance_widget.dart';
 import 'package:untitled1/features/profile/presentation/widgets/list_profile_widgets.dart';
-
-import '../../../../core/constant/constant.dart';
-import '../../../home/presentation/widgets/bottom_nav_widget.dart';
+import '../../../../core/constants/constants.dart';
 import '../widgets/profile_header_widget.dart';
-import '../widgets/profile_widgets.dart';
 
 
 class ProfileHomePage extends StatelessWidget {

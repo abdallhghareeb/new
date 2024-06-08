@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled1/config/text_style.dart';
 import 'package:untitled1/core/widget/svg_widget.dart';
-import 'package:untitled1/features/markets/presentation/provider/market_provider.dart';
-import '../../../../core/constant/constant.dart';
-import '../../../../core/constant/images.dart';
-import '../../../cart/presentation/provider/cart_provider.dart';
-import '../../../markets/domain/entities/market_entity.dart';
+
+import '../../../../core/constants/images.dart';
 
 class MarketVideosWidget extends StatelessWidget {
   const MarketVideosWidget( {super.key});
@@ -30,7 +25,7 @@ class MarketVideosWidget extends StatelessWidget {
           children: [
             SvgWidget(svg: Images.videoFile,color: Colors.white,width: 5.w,height:5.w),
             SizedBox(width: 1.w,),
-            Text("2000",style: TextStyleClass.smallBoldStyle(color: Colors.white),)
+            Text("2000",style: TextStyleClass.smallBoldStyle(color: Colors.white),),
           ],
         ),
       ),

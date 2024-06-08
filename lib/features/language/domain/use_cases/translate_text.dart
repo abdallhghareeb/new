@@ -1,5 +1,5 @@
 
-import '../../../../core/constant/constant.dart';
+import '../../../../core/constants/constants.dart';
 import '../entities/app_localizations.dart';
 
 class Translate{

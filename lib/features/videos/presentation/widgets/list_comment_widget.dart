@@ -6,9 +6,8 @@ import 'package:untitled1/core/widget/svg_widget.dart';
 import 'package:untitled1/core/widget/text_field.dart';
 import 'package:untitled1/features/videos/presentation/provider/comment_provider.dart';
 import 'package:untitled1/features/videos/presentation/widgets/comment_widget.dart';
-
 import '../../../../config/text_style.dart';
-import '../../../../core/constant/images.dart';
+import '../../../../core/constants/images.dart';
 
 class ListCommentWidget extends StatelessWidget {
   const ListCommentWidget({super.key});

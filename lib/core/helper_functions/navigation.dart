@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constant/constant.dart';
+
+import '../constants/constants.dart';
 
 void navP(className, {void Function(dynamic val)? then}){
   Navigator.push(Constants.globalContext(), MaterialPageRoute(builder: (context)=>className)).then((value) {
